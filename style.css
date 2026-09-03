@@ -3997,7 +3997,8 @@ span.link-chip {
 
 /* ─── 404 page ─── */
 .nf-band {
-    padding: 40px 20px 120px;
+    /* top padding must always clear the fixed floating pill navbar */
+    padding: clamp(112px, 15vh, 170px) 20px 120px;
 }
 
 .nf-wrap {
@@ -4373,5 +4374,39 @@ span.link-chip {
 
     .moments-ticker--bottom {
         bottom: calc(66px + env(safe-area-inset-bottom));
+    }
+}
+
+/* ────────────────────────────────────────────────────────────────
+   NAVBAR CLEARANCE
+   The nav is a fixed floating pill (top 20px desktop / 8–10px
+   mobile, ~56–70px tall). These rules guarantee that page content
+   never starts, anchors to, or is revealed underneath it.
+   ──────────────────────────────────────────────────────────────── */
+
+/* in-page hash jumps (#contact, #rules, …) land below the fixed pill */
+html {
+    scroll-padding-top: clamp(96px, 13vh, 130px);
+}
+
+[id] {
+    scroll-margin-top: clamp(96px, 13vh, 130px);
+}
+
+/* hero copy must start visibly below the floating pill on every viewport.
+   The full-bleed hero background may run under the glass pill by design,
+   but its text (kicker/title/CTAs) always gets a guaranteed runway. */
+.lumina-hero .lumina-in,
+#hero .hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+/* very short windows (landscape phones, small laptops): make the extra
+   top runway explicit instead of relying on vertical centering alone */
+@media (max-height: 700px) and (min-width: 861px) {
+    .lumina-hero {
+        min-height: auto;
+        padding-top: 150px;
     }
 }
