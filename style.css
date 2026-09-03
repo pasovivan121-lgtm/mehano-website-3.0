@@ -4358,3 +4358,15 @@ span.link-chip {
         opacity: 0.85;
     }
 }
+
+/* ─── PHONE LAYER: keep floating UI above the sticky mobile CTA bar ─── */
+@media (max-width: 860px) {
+    .lang-fab {
+        bottom: calc(86px + env(safe-area-inset-bottom));
+        right: 18px;
+    }
+
+    .moments-ticker--bottom {
+        bottom: calc(66px + env(safe-area-inset-bottom));
+    }
+}
