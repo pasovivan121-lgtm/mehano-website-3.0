@@ -3814,6 +3814,68 @@ span.link-chip {
     }
 }
 
+/* ─── Sticky mobile CTA bottom bar ─── */
+.mobile-cta-bar {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 11000;
+    display: none;
+    justify-content: space-around;
+    align-items: center;
+    background: rgba(12, 15, 22, 0.92);
+    -webkit-backdrop-filter: blur(16px);
+    backdrop-filter: blur(16px);
+    border-top: 1px solid var(--border);
+    padding: 7px 6px calc(7px + env(safe-area-inset-bottom));
+}
+
+.mobile-cta-bar a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+    text-decoration: none;
+    color: var(--text2);
+    font-size: 0.62rem;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 12px;
+    transition: color 0.2s ease;
+}
+
+.mobile-cta-bar a svg {
+    width: 20px;
+    height: 20px;
+}
+
+.mobile-cta-bar a.active,
+.mobile-cta-bar a:hover {
+    color: var(--accent3);
+}
+
+.mobile-cta-bar .cta-pill {
+    flex-direction: row;
+    gap: 7px;
+    background: linear-gradient(135deg, #0057ff, #00c6ff);
+    color: #fff;
+    border-radius: 999px;
+    padding: 9px 20px;
+    font-size: 0.72rem;
+    box-shadow: 0 8px 24px rgba(0, 87, 255, 0.35);
+}
+
+@media (max-width: 860px) {
+    .mobile-cta-bar {
+        display: flex;
+    }
+
+    body {
+        padding-bottom: calc(60px + env(safe-area-inset-bottom));
+    }
+}
+
 /* ─── Footer legal row ─── */
 .footer-legal {
     margin-top: 32px;
@@ -4315,3 +4377,72 @@ span.link-chip {
     }
 }
 
+/* ────────────────────────────────────────────────────────────────
+   NAVBAR CLEARANCE
+   The nav is a fixed floating pill (top 20px desktop / 8–10px
+   mobile, ~56–70px tall). These rules guarantee that page content
+   never starts, anchors to, or is revealed underneath it.
+   ──────────────────────────────────────────────────────────────── */
+
+/* --- the fixed navbar always paints its own background scrim so page
+   content scrolling underneath never shows through the bar itself --- */
+nav {
+    z-index: 1000;
+}
+
+nav::before {
+    content: "";
+    position: absolute;
+    top: -30px;
+    left: 0;
+    right: 0;
+    height: 140px;
+    background: linear-gradient(180deg, rgba(7, 9, 14, 0.72) 0%, rgba(7, 9, 14, 0.45) 52%, rgba(7, 9, 14, 0) 100%);
+    pointer-events: none;
+}
+
+/* in-page hash jumps (#contact, #rules, …) land below the fixed pill */
+html {
+    scroll-padding-top: clamp(96px, 13vh, 130px);
+}
+
+[id] {
+    scroll-margin-top: clamp(96px, 13vh, 130px);
+}
+
+/* --- every page reserves headroom under the fixed navbar on <main>,
+   so page content can never start hidden behind the bar. Full-bleed
+   hero sections opt back out: they begin at the top of the viewport by
+   design (their backgrounds run under the glass pill) and already pad
+   their own text below the pill. --- */
+:root {
+    --nav-clear: 96px;
+}
+
+main {
+    padding-top: var(--nav-clear);
+}
+
+main > section.lumina-hero,
+main > .moments-hero,
+main > #hero {
+    margin-top: calc(-1 * var(--nav-clear));
+}
+
+/* hero copy must start visibly below the floating pill on every viewport.
+   The full-bleed hero background may run under the glass pill by design,
+   but its text (kicker/title/CTAs) always gets a guaranteed runway. */
+.lumina-hero .lumina-in,
+#hero .hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+/* very short windows (landscape phones, small laptops): make the extra
+   top runway explicit instead of relying on vertical centering alone */
+@media (max-height: 700px) and (min-width: 861px) {
+    .lumina-hero {
+        min-height: auto;
+        padding-top: 150px;
+    }
+}
