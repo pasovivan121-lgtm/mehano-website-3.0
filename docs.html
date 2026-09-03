@@ -47,16 +47,34 @@
         </div>
 
 
-    <main style="padding-top: 100px;">
-        <!-- DOCS -->
-        <section id="docs">
-            <div class="container">
-                <div class="reveal">
-                    <div class="section-label" data-i18n="docs_label">Документи</div>
-                    <h2 class="section-title" data-i18n="docs_title">Архив на отбора</h2>
-                    <p class="section-desc" data-i18n="docs_desc">Цялата ни работа на едно място открита и достъпна.</p>
+    <main>
+        <!-- LUMINA HERO -->
+        <section class="lumina-hero">
+            <div class="lumina-orb-zone" aria-hidden="true">
+                <div class="lumina-ring"></div>
+                <canvas class="lumina-orb" data-c1="#0a5cff" data-c2="#2dd4ff" data-c3="#7b61ff"></canvas>
+            </div>
+            <div class="container lumina-in">
+                <div class="lumina-copy">
+                    <div class="lumina-kicker"><span data-i18n="docs_label">Документи</span></div>
+                    <h1 class="lumina-title" data-i18n="docs_title">Архив на отбора</h1>
+                    <p class="lumina-sub" data-i18n="docs_desc">Цялата ни работа на едно място открита и достъпна.</p>
+                    <div class="lumina-cta">
+                        <a href="https://drive.google.com/drive/folders/1jevfHf_yTP0FisgBv4sSLYA5WUY4JVP2?dmr=1&ec=wgc-drive-globalnav-goto" target="_blank" class="glow-btn"><span data-i18n="docs_cta">📁 Отвори Google Drive →</span></a>
+                        <a href="golden-rules.html" class="glow-btn glow-btn--ghost"><span data-i18n="doc1">Златните правила на Механо</span></a>
+                    </div>
+                    <div class="pg-chips">
+                        <span class="pg-chip">Golden Rules</span>
+                        <span class="pg-chip">Инструкции · Robot</span>
+                        <span class="pg-chip">Тетрадка · Notebook</span>
+                    </div>
                 </div>
-                <div class="docs-grid reveal">
+            </div>
+        </section>
+
+        <section class="band" style="padding-top: 10px;">
+            <div class="container">
+                <div class="docs-grid">
                     <a href="golden-rules.html" class="doc-card">
                         <div class="doc-icon">
                             <img src="assets/rules.png" alt="Rules">
@@ -83,9 +101,12 @@
                         <div class="doc-open" data-i18n="doc_open">Отвори</div>
                     </a>
                 </div>
-                <div class="docs-cta reveal">
-                    <a href="https://drive.google.com/drive/folders/1jevfHf_yTP0FisgBv4sSLYA5WUY4JVP2?dmr=1&ec=wgc-drive-globalnav-goto"
-                        target="_blank" class="btn-primary" data-i18n="docs_cta">📁 Отвори Google Drive →</a>
+                <div class="drive-cta">
+                    <div class="drive-panel glass">
+                        <span class="mono-tag">Google Drive</span>
+                        <a href="https://drive.google.com/drive/folders/1jevfHf_yTP0FisgBv4sSLYA5WUY4JVP2?dmr=1&ec=wgc-drive-globalnav-goto"
+                            target="_blank" class="btn-primary" data-i18n="docs_cta">📁 Отвори Google Drive →</a>
+                    </div>
                 </div>
             </div>
         </section>

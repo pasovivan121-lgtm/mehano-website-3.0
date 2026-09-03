@@ -188,15 +188,34 @@
         <a href="contact.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> <span data-i18n="nav_contact">Contact</span></a>
     </div>
 
-    <main style="padding-top: 100px;">
-        <div class="container">
-            <div class="doc-container reveal">
-                <div class="doc-header">
-                    <a href="project.html" class="back-link" data-i18n="back_to_project">&larr; Back to Project</a>
-                    <h1 class="section-title" style="text-align: left; margin: 0;" data-i18n="project_details_title">Research Project</h1>
+    <main>
+        <!-- LUMINA HERO -->
+        <section class="lumina-hero">
+            <div class="lumina-orb-zone" aria-hidden="true">
+                <div class="lumina-ring"></div>
+                <canvas class="lumina-orb" data-c1="#0a5cff" data-c2="#00c6ff" data-c3="#ffb86b"></canvas>
+            </div>
+            <div class="container lumina-in">
+                <div class="lumina-copy">
+                    <div class="lumina-kicker"><span data-i18n="project_label">Проект</span></div>
+                    <h1 class="lumina-title" data-i18n="project_details_title">Научноизследователски проект</h1>
+                    <div class="lumina-cta">
+                        <a href="project.html" class="glow-btn"><span data-i18n="back_to_project">← Назад към проекта</span></a>
+                        <a href="https://asoa-2-0.vercel.app/" target="_blank" class="glow-btn glow-btn--ghost"><span data-i18n="project_site">🌐 Виж сайта</span></a>
+                    </div>
+                    <div class="pg-chips">
+                        <span class="pg-chip">ASOA 2.0</span>
+                        <span class="pg-chip">Research</span>
+                        <span class="pg-chip">Docs</span>
+                    </div>
                 </div>
+            </div>
+        </section>
 
-                <div class="doc-content">
+        <section class="band" style="padding-top: 10px;">
+            <div class="container">
+                <article class="article-wrap glass">
+                    <div class="doc-content">
                     <p data-i18n="project_doc_p1">Loading...</p>
                     <p data-i18n="project_doc_p2">Loading...</p>
                     <p data-i18n="project_doc_p3">Loading...</p>
@@ -219,9 +238,10 @@
                     <h2 data-i18n="project_doc_h4">Software Section</h2>
                     <p data-i18n="project_doc_p11">Loading...</p>
                     <p data-i18n="project_doc_p12">Loading...</p>
-                </div>
+                    </div>
+                </article>
             </div>
-        </div>
+        </section>
     </main>
 
     <!-- FOOTER -->

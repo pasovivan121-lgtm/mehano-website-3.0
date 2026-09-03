@@ -48,17 +48,37 @@
     </div>
 
 
-    <main style="padding-top: 100px;">
-        <!-- LOCATION -->
-        <section id="location">
-            <div class="container">
-                <div class="reveal">
-                    <div class="section-label" data-i18n="location_label">Място</div>
-                    <h2 class="section-title" data-i18n="location_title">Където се случва магията</h2>
-                    <p class="section-desc" data-i18n="location_desc">Тук се събираме, проектираме и програмираме нашия
+    <main>
+        <!-- LUMINA HERO -->
+        <section class="lumina-hero">
+            <div class="lumina-orb-zone" aria-hidden="true">
+                <div class="lumina-ring"></div>
+                <canvas class="lumina-orb" data-c1="#0a5cff" data-c2="#00c6ff" data-c3="#ff5f9e"></canvas>
+            </div>
+            <div class="container lumina-in">
+                <div class="lumina-copy">
+                    <div class="lumina-kicker"><span data-i18n="location_label">Място</span></div>
+                    <h1 class="lumina-title" data-i18n="location_title">Където се случва магията</h1>
+                    <p class="lumina-sub" data-i18n="location_desc">Тук се събираме, проектираме и програмираме нашия
                         робот.</p>
+                    <div class="lumina-cta">
+                        <a href="#contact" class="glow-btn"><span data-i18n="nav_contact">Свържи се</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                        </a>
+                        <a href="mailto:teamehano@gmail.com" class="glow-btn glow-btn--ghost">teamehano@gmail.com</a>
+                    </div>
+                    <div class="pg-chips">
+                        <span class="pg-chip">ПГМЕЕ · Бургас</span>
+                        <span class="pg-chip">STEM Лаборатория</span>
+                        <span class="pg-chip">FLL 2025–26</span>
+                    </div>
                 </div>
-                <div class="location-card reveal">
+            </div>
+        </section>
+
+        <section id="location" class="band">
+            <div class="container">
+                <div class="location-card glass">
                     <div class="location-info">
                         <h3 data-i18n="location_school">Професионална гимназия по механоелектроника и електроника</h3>
                         <div class="addr" data-i18n="location_address">ул. Стефан Стамболов 67, Бургас</div>
@@ -82,15 +102,15 @@
         </section>
 
         <!-- CONTACT -->
-        <section id="contact">
+        <section id="contact" class="band band-alt" style="padding-top: 10px;">
             <div class="container">
-                <div class="reveal">
+                <div class="band-head">
                     <div class="section-label" data-i18n="contact_label">Контакт</div>
                     <h2 class="section-title" data-i18n="contact_title">Свържи се с нас</h2>
                     <p class="section-desc" data-i18n="contact_desc">Имаш въпрос, идея или искаш да си партньор? Пиши ни.
                     </p>
                 </div>
-                <div class="contact-grid reveal">
+                <div class="contact-grid">
                     <a href="mailto:teamehano@gmail.com" class="contact-card">
                         <div class="contact-card-icon">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 24px; height: 24px;"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>

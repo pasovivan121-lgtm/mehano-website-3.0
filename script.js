@@ -1746,3 +1746,159 @@ function initTeamVideoHover() {
 
 document.addEventListener('DOMContentLoaded', initTeamVideoHover);
 initTeamVideoHover(); // Run immediately in case DOM is ready
+
+/* ─── LUMINA liquid orb + magnetic glow buttons (inner pages) ─── */
+(function () {
+    function hexToRgba(hex, a) {
+        var h = String(hex || '#0a5cff').replace('#', '');
+        if (h.length === 3) {
+            h = h.split('').map(function (c) { return c + c; }).join('');
+        }
+        var n = parseInt(h, 16);
+        return 'rgba(' + ((n >> 16) & 255) + ',' + ((n >> 8) & 255) + ',' + (n & 255) + ',' + a + ')';
+    }
+
+    function initOrb(canvas) {
+        if (!canvas || !canvas.getContext) return;
+        if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            canvas.style.opacity = '0.28';
+            return;
+        }
+        var ctx = canvas.getContext('2d');
+        var dpr = Math.min(window.devicePixelRatio || 1, 2);
+        var c1 = canvas.dataset.c1 || '#0a5cff';
+        var c2 = canvas.dataset.c2 || '#00c6ff';
+        var c3 = canvas.dataset.c3 || '#7b61ff';
+        var W = 0, H = 0, CX = 0, CY = 0, R = 0;
+        var running = true;
+        var visible = true;
+        var t = 0;
+        var mx = 0, my = 0;
+
+        function size() {
+            var rect = canvas.getBoundingClientRect();
+            W = Math.max(rect.width, 60);
+            H = Math.max(rect.height, 60);
+            canvas.width = W * dpr;
+            canvas.height = H * dpr;
+            ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+            CX = W / 2;
+            CY = H / 2;
+            R = Math.min(W, H) * 0.42;
+        }
+        size();
+
+        function render(now) {
+            t = (now || performance.now()) * 0.0006;
+            ctx.clearRect(0, 0, W, H);
+            var ox = Math.sin(t * 0.9) * R * 0.16 + mx * R * 0.13;
+            var oy = Math.cos(t * 0.72) * R * 0.16 + my * R * 0.13;
+
+            // ambient glow behind the sphere
+            var g0 = ctx.createRadialGradient(CX + ox, CY + oy, 0, CX + ox, CY + oy, R * 1.4);
+            g0.addColorStop(0, hexToRgba(c3, 0.12));
+            g0.addColorStop(0.55, hexToRgba(c1, 0.06));
+            g0.addColorStop(1, 'rgba(0,0,0,0)');
+            ctx.fillStyle = g0;
+            ctx.fillRect(0, 0, W, H);
+
+            // liquid core
+            var core = ctx.createRadialGradient(
+                CX + ox - R * 0.12, CY + oy - R * 0.18, R * 0.04,
+                CX + ox, CY + oy, R * 0.98
+            );
+            core.addColorStop(0, hexToRgba(c2, 0.5));
+            core.addColorStop(0.45, hexToRgba(c1, 0.6));
+            core.addColorStop(1, hexToRgba(c3, 0.03));
+            ctx.fillStyle = core;
+            ctx.beginPath();
+            ctx.arc(CX + ox, CY + oy, R, 0, Math.PI * 2);
+            ctx.fill();
+
+            // rolling darker blobs = liquid motion
+            for (var i = 0; i < 3; i++) {
+                var a = t * (0.6 + i * 0.24) + i * 2.1;
+                var bx = CX + ox + Math.cos(a) * R * 0.55;
+                var by = CY + oy + Math.sin(a * 1.3) * R * 0.55;
+                var br = R * (0.2 + (i % 2) * 0.13);
+                var blob = ctx.createRadialGradient(bx, by, 0, bx, by, br);
+                blob.addColorStop(0, hexToRgba(c1, 0.5));
+                blob.addColorStop(1, 'rgba(0,0,0,0)');
+                ctx.fillStyle = blob;
+                ctx.beginPath();
+                ctx.arc(bx, by, br, 0, Math.PI * 2);
+                ctx.fill();
+            }
+
+            // drifting caustic highlight
+            var hx = CX + ox - R * 0.28 + Math.sin(t * 1.2) * R * 0.09;
+            var hy = CY + oy - R * 0.34 + Math.cos(t * 0.9) * R * 0.07;
+            var hl = ctx.createRadialGradient(hx, hy, 0, hx, hy, R * 0.52);
+            hl.addColorStop(0, 'rgba(255,255,255,0.4)');
+            hl.addColorStop(0.42, 'rgba(255,255,255,0.07)');
+            hl.addColorStop(1, 'rgba(255,255,255,0)');
+            ctx.fillStyle = hl;
+            ctx.beginPath();
+            ctx.arc(hx, hy, R * 0.52, 0, Math.PI * 2);
+            ctx.fill();
+
+            // sharp specular dot
+            var sx = CX + ox - R * 0.32;
+            var sy = CY + oy - R * 0.38;
+            var spec = ctx.createRadialGradient(sx, sy, 0, sx, sy, R * 0.12);
+            spec.addColorStop(0, 'rgba(255,255,255,0.85)');
+            spec.addColorStop(1, 'rgba(255,255,255,0)');
+            ctx.fillStyle = spec;
+            ctx.beginPath();
+            ctx.arc(sx, sy, R * 0.12, 0, Math.PI * 2);
+            ctx.fill();
+
+            // rim light
+            ctx.strokeStyle = hexToRgba(c2, 0.2);
+            ctx.lineWidth = 1.5;
+            ctx.beginPath();
+            ctx.arc(CX + ox, CY + oy, R * 0.98, 0, Math.PI * 2);
+            ctx.stroke();
+        }
+
+        window.addEventListener('pointermove', function (e) {
+            mx = (e.clientX / window.innerWidth - 0.5) * 2;
+            my = (e.clientY / window.innerHeight - 0.5) * 2;
+        }, { passive: true });
+
+        window.addEventListener('resize', size);
+
+        if ('IntersectionObserver' in window) {
+            new IntersectionObserver(function (entries) {
+                entries.forEach(function (en) {
+                    visible = en.isIntersecting;
+                });
+            }, { threshold: 0.05 }).observe(canvas);
+        }
+
+        function loop(now) {
+            if (!running) return;
+            if (visible) render(now);
+            requestAnimationFrame(loop);
+        }
+        requestAnimationFrame(loop);
+    }
+
+    document.querySelectorAll('canvas.lumina-orb').forEach(initOrb);
+
+    /* magnetic glow buttons */
+    document.querySelectorAll('.glow-btn').forEach(function (btn) {
+        function clamp(v) { return Math.max(-7, Math.min(7, v)); }
+        btn.addEventListener('pointermove', function (e) {
+            var r = btn.getBoundingClientRect();
+            var dx = clamp((e.clientX - (r.left + r.width / 2)) * 0.16);
+            var dy = clamp((e.clientY - (r.top + r.height / 2)) * 0.16);
+            btn.style.setProperty('--mx', dx.toFixed(1) + 'px');
+            btn.style.setProperty('--my', dy.toFixed(1) + 'px');
+        }, { passive: true });
+        btn.addEventListener('pointerleave', function () {
+            btn.style.removeProperty('--mx');
+            btn.style.removeProperty('--my');
+        });
+    });
+})();
