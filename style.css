@@ -4446,3 +4446,70 @@ main > #hero {
         padding-top: 150px;
     }
 }
+
+/* ────────────────────────────────────────────────────────────────
+   MOBILE NAVBAR HARDENING
+   On screens ≤900px the pill collapses to logo + hamburger. These
+   rules make that flex line explicit so the bar can never wrap,
+   overflow 100vw, or let the hamburger push the pill out of view
+   between ~480px and ~640px. Font/icon sizing is trimmed for the
+   narrowest phones so the pill stays compact.
+   ──────────────────────────────────────────────────────────────── */
+
+@media (max-width: 900px) {
+    nav {
+        flex-wrap: nowrap;
+        justify-content: space-between;
+    }
+
+    /* pill yields width to the hamburger instead of shrinking blindly */
+    .nav-pill {
+        flex: 1 1 auto;
+        min-width: 0;
+    }
+
+    .hamburger {
+        flex: 0 0 auto;
+        margin-left: 12px;
+    }
+}
+
+/* phones: compact pill + logo, tighter link/button metrics */
+@media (max-width: 640px) {
+    .nav-pill {
+        padding: 7px 12px;
+    }
+
+    .nav-profile {
+        width: 32px;
+        height: 32px;
+        margin-right: 9px;
+        flex: 0 0 auto;
+    }
+
+    .hamburger {
+        margin-left: 9px;
+    }
+}
+
+/* very narrow phones (≈ ≤560px): smallest safe compact size */
+@media (max-width: 560px) {
+    nav {
+        top: 8px;
+        padding: 0 10px;
+    }
+
+    .nav-pill {
+        padding: 6px 10px;
+    }
+
+    .nav-profile {
+        width: 30px;
+        height: 30px;
+        margin-right: 8px;
+    }
+
+    .hamburger {
+        padding: 11px 12px;
+    }
+}
