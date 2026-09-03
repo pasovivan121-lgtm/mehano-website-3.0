@@ -4384,6 +4384,23 @@ span.link-chip {
    never starts, anchors to, or is revealed underneath it.
    ──────────────────────────────────────────────────────────────── */
 
+/* --- the fixed navbar always paints its own background scrim so page
+   content scrolling underneath never shows through the bar itself --- */
+nav {
+    z-index: 1000;
+}
+
+nav::before {
+    content: "";
+    position: absolute;
+    top: -30px;
+    left: 0;
+    right: 0;
+    height: 140px;
+    background: linear-gradient(180deg, rgba(7, 9, 14, 0.72) 0%, rgba(7, 9, 14, 0.45) 52%, rgba(7, 9, 14, 0) 100%);
+    pointer-events: none;
+}
+
 /* in-page hash jumps (#contact, #rules, …) land below the fixed pill */
 html {
     scroll-padding-top: clamp(96px, 13vh, 130px);
@@ -4391,6 +4408,25 @@ html {
 
 [id] {
     scroll-margin-top: clamp(96px, 13vh, 130px);
+}
+
+/* --- every page reserves headroom under the fixed navbar on <main>,
+   so page content can never start hidden behind the bar. Full-bleed
+   hero sections opt back out: they begin at the top of the viewport by
+   design (their backgrounds run under the glass pill) and already pad
+   their own text below the pill. --- */
+:root {
+    --nav-clear: 96px;
+}
+
+main {
+    padding-top: var(--nav-clear);
+}
+
+main > section.lumina-hero,
+main > .moments-hero,
+main > #hero {
+    margin-top: calc(-1 * var(--nav-clear));
 }
 
 /* hero copy must start visibly below the floating pill on every viewport.
