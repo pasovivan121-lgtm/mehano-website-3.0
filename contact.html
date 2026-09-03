@@ -4,8 +4,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Механо</title>
-    <link rel="icon" type="image/jpeg" href="assets/teammehano_logo.jpg">
+    <title>Contact & Location — Team Mehano</title>
+    <meta name="description" content="Get in touch with Team Mehano or find us at PGMEE Burgas' STEM lab. Questions, ideas or partnerships — write to us.">
+    <link rel="canonical" href="https://mehano-website-3-0.vercel.app/contact.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Team Mehano">
+    <meta property="og:title" content="Contact & Location — Team Mehano">
+    <meta property="og:description" content="Get in touch with Team Mehano or find us at PGMEE Burgas' STEM lab. Questions, ideas or partnerships — write to us.">
+    <meta property="og:url" content="https://mehano-website-3-0.vercel.app/contact.html">
+    <meta property="og:image" content="https://mehano-website-3-0.vercel.app/assets/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Team Mehano — FIRST LEGO League Robotics Team">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Contact & Location — Team Mehano">
+    <meta name="twitter:description" content="Get in touch with Team Mehano or find us at PGMEE Burgas' STEM lab. Questions, ideas or partnerships — write to us.">
+    <meta name="twitter:image" content="https://mehano-website-3-0.vercel.app/assets/og-image.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+    <link rel="manifest" href="site.webmanifest">
+    <meta name="theme-color" content="#0a0c11">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link
         href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Mono:wght@400;500&display=swap"
@@ -94,7 +114,7 @@
                     <div class="location-map">
                         <iframe
                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2932.1!2d27.4692173!3d42.5069916!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40a6939eeacb3d45%3A0xac9278e094e03a57!2z0J_RgNC-0YTQtdGB0LjQvtC90LDQu9C90LAg0LPQuNC80L3QsNC30LjRjyDQv9C-INC80LXRhdCw0L3QvtC10LvQtdC60YLRgNC-0YLQtdGF0L3QuNC60LAg0Lgg0LXQu9C10LrRgtGA0L7QvdC40LrQsA!5e0!3m2!1sbg!2sbg!4v1680000000000!5m2!1sbg!2sbg"
-                            allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                            title="Карта: ПГМЕЕ Бургас / Map: PGMEE Burgas" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade">
                         </iframe>
                     </div>
                 </div>
@@ -132,6 +152,44 @@
                         <h4 data-i18n="contact_location_label">Локация</h4>
                         <p data-i18n="contact_location_city">Бургас, България</p>
                     </div>
+                </div>
+
+                <!-- CONTACT FORM (validated, mailto compose + thank-you state) -->
+                <form id="contactForm" class="contact-form glass" novalidate>
+                    <div class="form-grid">
+                        <div class="form-field">
+                            <label for="cf-name" data-i18n="form_name">Име</label>
+                            <input type="text" id="cf-name" name="name" autocomplete="name" placeholder="Иван" aria-describedby="err-name" required>
+                            <small class="field-error" id="err-name" hidden data-i18n="err_name">Моля, въведете името си.</small>
+                        </div>
+                        <div class="form-field">
+                            <label for="cf-email" data-i18n="form_email">Имейл</label>
+                            <input type="email" id="cf-email" name="email" autocomplete="email" placeholder="name@example.com" aria-describedby="err-email" required>
+                            <small class="field-error" id="err-email" hidden data-i18n="err_email">Моля, въведете валиден имейл адрес.</small>
+                        </div>
+                    </div>
+                    <div class="form-field">
+                        <label for="cf-msg" data-i18n="form_message">Съобщение</label>
+                        <textarea id="cf-msg" name="message" rows="5" aria-describedby="err-msg" required></textarea>
+                        <small class="field-error" id="err-msg" hidden data-i18n="err_message">Моля, напишете съобщение с поне 10 символа.</small>
+                    </div>
+                    <label class="consent-box">
+                        <input type="checkbox" id="cf-consent" aria-describedby="err-consent">
+                        <span data-i18n-html="form_consent">Съгласен/на съм личните ми данни да бъдат обработени съгласно <a href="privacy.html">Политиката за поверителност</a>.</span>
+                    </label>
+                    <small class="field-error" id="err-consent" hidden data-i18n="err_consent">Моля, отбележете съгласието си.</small>
+                    <div class="form-submit">
+                        <button type="submit" class="glow-btn" id="cfSend"><span data-i18n="form_send">Изпрати съобщение</span></button>
+                    </div>
+                </form>
+
+                <!-- THANK-YOU STATE -->
+                <div id="formSuccess" class="form-success glass" hidden>
+                    <div class="ok-badge" aria-hidden="true">✓</div>
+                    <h3 data-i18n="form_success_title">Благодарим ви!</h3>
+                    <p data-i18n="form_success_text">Съобщението ви е готово. Имейл приложението ви ще се отвори, за да довършите изпращането.</p>
+                    <p class="success-note" data-i18n="form_success_note">Съвет: ако имейл клиентът не се отвори, пишете ни директно на teamehano@gmail.com.</p>
+                    <button type="button" class="glow-btn glow-btn--ghost" id="formAgain" data-i18n="form_again">Изпрати ново съобщение</button>
                 </div>
             </div>
         </section>

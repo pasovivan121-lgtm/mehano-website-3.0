@@ -1,6 +1,23 @@
 // ─── TRANSLATIONS ───
 const i18n = {
     bg: {
+        form_name: "Име", form_email: "Имейл", form_message: "Съобщение",
+        form_send: "Изпрати съобщение", form_sending: "Изпращане…",
+        form_success_title: "Благодарим ви!",
+        form_success_text: "Съобщението ви е готово. Имейл приложението ви ще се отвори, за да довършите изпращането.",
+        form_success_note: "Съвет: ако имейл клиентът не се отвори, пишете ни директно на teamehano@gmail.com.",
+        form_again: "Изпрати ново съобщение",
+        form_consent: 'Съгласен/на съм личните ми данни да бъдат обработени съгласно <a href="privacy.html">Политиката за поверителност</a>.',
+        err_name: "Моля, въведете името си.",
+        err_email: "Моля, въведете валиден имейл адрес.",
+        err_message: "Моля, напишете съобщение с поне 10 символа.",
+        err_consent: "Моля, отбележете съгласието си.",
+        cookie_text: 'Този сайт използва локално съхранение само за езика и предпочитанията ви — без рекламни бисквитки. <a href="privacy.html">Повече в Политиката за поверителност</a>.',
+        cookie_accept: "Приемам", cookie_decline: "Отказ",
+        privacy_link: "Поверителност", terms_link: "Условия за ползване",
+        nf_msg: "Опа! Страницата, която търсите, не съществува или е преместена.",
+        back_home: "Към началото",
+
         robot_instr_title: "Инструкции на робота",
 
         robot_instr_desc: "Подробни PDF инструкции за сглобяване на нашия робот и приставки.",
@@ -179,6 +196,23 @@ const i18n = {
     },
     
     en: {
+        form_name: "Name", form_email: "Email", form_message: "Message",
+        form_send: "Send message", form_sending: "Sending…",
+        form_success_title: "Thank you!",
+        form_success_text: "Your message is ready. Your email app will open so you can finish sending it.",
+        form_success_note: "Tip: if your email app doesn't open, write to us directly at teamehano@gmail.com.",
+        form_again: "Send another message",
+        form_consent: 'I agree to my personal data being processed in line with the <a href="privacy.html">Privacy Policy</a>.',
+        err_name: "Please enter your name.",
+        err_email: "Please enter a valid email address.",
+        err_message: "Please write a message of at least 10 characters.",
+        err_consent: "Please tick the consent box.",
+        cookie_text: 'This site only uses local storage for your language and preferences — no ad cookies, no trackers. <a href="privacy.html">More in the Privacy Policy</a>.',
+        cookie_accept: "Accept", cookie_decline: "Decline",
+        privacy_link: "Privacy Policy", terms_link: "Terms of Service",
+        nf_msg: "Oops! The page you're looking for doesn't exist or has moved.",
+        back_home: "Back to Home",
+
         robot_instr_title: "Robot Instructions",
 
         robot_instr_desc: "Detailed PDF instructions for building our robot and attachments.",
@@ -357,6 +391,23 @@ const i18n = {
     },
     
     el: {
+        form_name: "Όνομα", form_email: "Email", form_message: "Μήνυμα",
+        form_send: "Αποστολή μηνύματος", form_sending: "Αποστολή…",
+        form_success_title: "Σας ευχαριστούμε!",
+        form_success_text: "Το μήνυμά σας είναι έτοιμο. Θα ανοίξει η εφαρμογή email σας για να ολοκληρώσετε την αποστολή.",
+        form_success_note: "Συμβουλή: αν δεν ανοίξει η εφαρμογή email, γράψτε μας απευθείας στο teamehano@gmail.com.",
+        form_again: "Αποστολή νέου μηνύματος",
+        form_consent: 'Συμφωνώ τα προσωπικά μου δεδομένα να υποβάλλονται σε επεξεργασία σύμφωνα με την <a href="privacy.html">Πολιτική Απορρήτου</a>.',
+        err_name: "Παρακαλώ εισάγετε το όνομά σας.",
+        err_email: "Παρακαλώ εισάγετε έγκυρη διεύθυνση email.",
+        err_message: "Παρακαλώ γράψτε ένα μήνυμα με τουλάχιστον 10 χαρακτήρες.",
+        err_consent: "Παρακαλώ σημειώστε τη συγκατάθεσή σας.",
+        cookie_text: 'Αυτός ο ιστότοπος χρησιμοποιεί τοπική αποθήκευση μόνο για τη γλώσσα και τις προτιμήσεις σας — χωρίς διαφημιστικά cookies ή ιχνηλάτες. <a href="privacy.html">Περισσότερα στην Πολιτική Απορρήτου</a>.',
+        cookie_accept: "Αποδοχή", cookie_decline: "Απόρριψη",
+        privacy_link: "Πολιτική Απορρήτου", terms_link: "Όροι Χρήσης",
+        nf_msg: "Ουπς! Η σελίδα που αναζητάτε δεν υπάρχει ή έχει μετακινηθεί.",
+        back_home: "Επιστροφή στην αρχική",
+
         robot_instr_title: "Οδηγίες Ρομπότ",
 
         robot_instr_desc: "Λεπτομερείς οδηγίες PDF για την κατασκευή του ρομπότ μας.",
@@ -525,6 +576,23 @@ const i18n = {
 
     },
     zh: {
+        form_name: "姓名", form_email: "电子邮件", form_message: "消息",
+        form_send: "发送消息", form_sending: "发送中…",
+        form_success_title: "谢谢您！",
+        form_success_text: "您的消息已准备好。将打开您的电子邮件应用以完成发送。",
+        form_success_note: "提示：如果电子邮件应用未打开，请直接写信至 teamehano@gmail.com。",
+        form_again: "再发送一条消息",
+        form_consent: '我同意按照<a href="privacy.html">隐私政策</a>处理我的个人数据。',
+        err_name: "请输入您的姓名。",
+        err_email: "请输入有效的电子邮件地址。",
+        err_message: "请输入至少 10 个字符的消息。",
+        err_consent: "请勾选同意框。",
+        cookie_text: '本网站仅使用本地存储来保存您的语言和偏好 — 无广告 Cookie，无追踪器。<a href="privacy.html">详见隐私政策</a>。',
+        cookie_accept: "接受", cookie_decline: "拒绝",
+        privacy_link: "隐私政策", terms_link: "服务条款",
+        nf_msg: "哎呀！您查找的页面不存在或已被移动。",
+        back_home: "返回首页",
+
         robot_instr_title: "机器人指令",
 
         robot_instr_desc: "用于构建我们的机器人和附件的详细 PDF 指令。",
@@ -702,6 +770,23 @@ const i18n = {
     },
     
     pt: {
+        form_name: "Nome", form_email: "Email", form_message: "Mensagem",
+        form_send: "Enviar mensagem", form_sending: "A enviar…",
+        form_success_title: "Obrigado!",
+        form_success_text: "A sua mensagem está pronta. A sua aplicação de email vai abrir para concluir o envio.",
+        form_success_note: "Dica: se a aplicação de email não abrir, escreva-nos diretamente para teamehano@gmail.com.",
+        form_again: "Enviar outra mensagem",
+        form_consent: 'Concordo com o tratamento dos meus dados pessoais de acordo com a <a href="privacy.html">Política de Privacidade</a>.',
+        err_name: "Por favor, introduza o seu nome.",
+        err_email: "Introduza um endereço de email válido.",
+        err_message: "Escreva uma mensagem com pelo menos 10 caracteres.",
+        err_consent: "Assinale a caixa de consentimento.",
+        cookie_text: 'Este site usa apenas armazenamento local para o seu idioma e preferências — sem cookies de publicidade, sem rastreadores. <a href="privacy.html">Saiba mais na Política de Privacidade</a>.',
+        cookie_accept: "Aceitar", cookie_decline: "Recusar",
+        privacy_link: "Política de Privacidade", terms_link: "Termos de Serviço",
+        nf_msg: "Ops! A página que procura não existe ou foi movida.",
+        back_home: "Voltar ao início",
+
         robot_instr_title: "Instruções do Robô",
 
         robot_instr_desc: "Instruções PDF λεπτομερείς για την κατασκευή του ρομπότ μας.",
@@ -881,6 +966,23 @@ const i18n = {
     },
     
     es: {
+        form_name: "Nombre", form_email: "Correo electrónico", form_message: "Mensaje",
+        form_send: "Enviar mensaje", form_sending: "Enviando…",
+        form_success_title: "¡Gracias!",
+        form_success_text: "Tu mensaje está listo. Se abrirá tu aplicación de correo para terminar el envío.",
+        form_success_note: "Consejo: si tu aplicación de correo no se abre, escríbenos directamente a teamehano@gmail.com.",
+        form_again: "Enviar otro mensaje",
+        form_consent: 'Acepto que mis datos personales se traten conforme a la <a href="privacy.html">Política de Privacidad</a>.',
+        err_name: "Por favor, introduce tu nombre.",
+        err_email: "Introduce un correo electrónico válido.",
+        err_message: "Escribe un mensaje de al menos 10 caracteres.",
+        err_consent: "Marca la casilla de consentimiento.",
+        cookie_text: 'Este sitio solo usa almacenamiento local para tu idioma y preferencias — sin cookies publicitarias ni rastreadores. <a href="privacy.html">Más información en la Política de Privacidad</a>.',
+        cookie_accept: "Aceptar", cookie_decline: "Rechazar",
+        privacy_link: "Política de Privacidad", terms_link: "Términos del Servicio",
+        nf_msg: "¡Ups! La página que buscas no existe o se ha movido.",
+        back_home: "Volver al inicio",
+
         robot_instr_title: "Instrucciones del Robot",
 
         robot_instr_desc: "Instrucciones detalladas en PDF para construir nuestro robot y accesorios.",
@@ -1060,6 +1162,23 @@ const i18n = {
     
 
         de: {
+        form_name: "Name", form_email: "E-Mail", form_message: "Nachricht",
+        form_send: "Nachricht senden", form_sending: "Wird gesendet…",
+        form_success_title: "Vielen Dank!",
+        form_success_text: "Ihre Nachricht ist fertig. Ihre E-Mail-App wird geöffnet, damit Sie den Versand abschließen können.",
+        form_success_note: "Tipp: Falls sich Ihre E-Mail-App nicht öffnet, schreiben Sie uns direkt an teamehano@gmail.com.",
+        form_again: "Weitere Nachricht senden",
+        form_consent: 'Ich stimme zu, dass meine personenbezogenen Daten gemäß der <a href="privacy.html">Datenschutzerklärung</a> verarbeitet werden.',
+        err_name: "Bitte geben Sie Ihren Namen ein.",
+        err_email: "Bitte geben Sie eine gültige E-Mail-Adresse ein.",
+        err_message: "Bitte schreiben Sie eine Nachricht mit mindestens 10 Zeichen.",
+        err_consent: "Bitte setzen Sie das Einverständnis-Häkchen.",
+        cookie_text: 'Diese Website verwendet nur lokalen Speicher für Sprache und Einstellungen — keine Werbe-Cookies, keine Tracker. <a href="privacy.html">Mehr in der Datenschutzerklärung</a>.',
+        cookie_accept: "Akzeptieren", cookie_decline: "Ablehnen",
+        privacy_link: "Datenschutz", terms_link: "Nutzungsbedingungen",
+        nf_msg: "Hoppla! Die gesuchte Seite existiert nicht oder wurde verschoben.",
+        back_home: "Zurück zur Startseite",
+
         robot_instr_title: "Roboter-Anleitungen",
         expert_name: "Dr. Ian MacLeod",
         expert_title: "Weltbekannter Experte für Konservierung · Western Australian Museum",
@@ -1237,6 +1356,23 @@ const i18n = {
     },
     
     fr: {
+        form_name: "Nom", form_email: "E-mail", form_message: "Message",
+        form_send: "Envoyer le message", form_sending: "Envoi en cours…",
+        form_success_title: "Merci !",
+        form_success_text: "Votre message est prêt. Votre application de messagerie va s'ouvrir pour terminer l'envoi.",
+        form_success_note: "Astuce : si votre application de messagerie ne s'ouvre pas, écrivez-nous à teamehano@gmail.com.",
+        form_again: "Envoyer un autre message",
+        form_consent: "J'accepte que mes données personnelles soient traitées conformément à la <a href=\"privacy.html\">Politique de confidentialité</a>.",
+        err_name: "Veuillez saisir votre nom.",
+        err_email: "Veuillez saisir une adresse e-mail valide.",
+        err_message: "Veuillez écrire un message d'au moins 10 caractères.",
+        err_consent: "Veuillez cocher la case de consentement.",
+        cookie_text: "Ce site n'utilise que le stockage local pour votre langue et vos préférences — pas de cookies publicitaires, ni traceurs. <a href=\"privacy.html\">Plus d'infos dans la Politique de confidentialité</a>.",
+        cookie_accept: "Accepter", cookie_decline: "Refuser",
+        privacy_link: "Confidentialité", terms_link: "Conditions d'utilisation",
+        nf_msg: "Oups ! La page que vous recherchez n'existe pas ou a été déplacée.",
+        back_home: "Retour à l'accueil",
+
         robot_instr_title: "Instructions du Robot",
 
         robot_instr_desc: "Instructions PDF détaillées pour la construction de notre robot et de ses accessoires.",
@@ -1414,6 +1550,23 @@ const i18n = {
     },
     
     ja: {
+        form_name: "お名前", form_email: "メールアドレス", form_message: "メッセージ",
+        form_send: "メッセージを送信", form_sending: "送信中…",
+        form_success_title: "ありがとうございます！",
+        form_success_text: "メッセージの準備ができました。メールアプリが開いて送信を完了できます。",
+        form_success_note: "ヒント：メールアプリが開かない場合は、teamehano@gmail.com まで直接ご連絡ください。",
+        form_again: "別のメッセージを送信",
+        form_consent: '<a href="privacy.html">プライバシーポリシー</a>に従った個人データの取り扱いに同意します。',
+        err_name: "お名前を入力してください。",
+        err_email: "有効なメールアドレスを入力してください。",
+        err_message: "10文字以上のメッセージを入力してください。",
+        err_consent: "同意チェックボックスにチェックを入れてください。",
+        cookie_text: '<a href="privacy.html">プライバシーポリシー</a>：このサイトは言語と設定の保存にのみローカルストレージを使用します。広告Cookieやトラッカーはありません。',
+        cookie_accept: "同意する", cookie_decline: "拒否",
+        privacy_link: "プライバシーポリシー", terms_link: "利用規約",
+        nf_msg: "おっと！お探しのページは存在しないか、移動しました。",
+        back_home: "ホームに戻る",
+
         robot_instr_title: "ロボットの説明書",
 
         robot_instr_desc: "ロボットとアタッチメントを構築するための詳細なPDF手順。",
@@ -1902,3 +2055,250 @@ initTeamVideoHover(); // Run immediately in case DOM is ready
         });
     });
 })();
+
+/* ─── PRODUCTION UX: cookie banner, mobile CTA bar, footer legal links, contact form ─── */
+function trKey(k) {
+    const t = i18n[currentLang];
+    return (t && t[k]) || (i18n.en && i18n.en[k]) || k;
+}
+
+function docReady(fn) {
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', fn);
+    } else {
+        fn();
+    }
+}
+
+/* Lightweight cookie-consent banner (localStorage-persisted, Accept / Decline) */
+function initCookieBanner() {
+    let stored = null;
+    try { stored = localStorage.getItem('mehano_consent'); } catch (e) { /* storage unavailable */ }
+    if (stored || document.getElementById('cookieBanner')) return;
+
+    const wrap = document.createElement('div');
+    wrap.id = 'cookieBanner';
+    wrap.className = 'cookie-banner';
+    wrap.setAttribute('role', 'dialog');
+    wrap.setAttribute('aria-label', 'Cookie consent');
+
+    const text = document.createElement('p');
+    text.className = 'cookie-text';
+    text.setAttribute('data-i18n-html', 'cookie_text');
+
+    const actions = document.createElement('div');
+    actions.className = 'cookie-actions';
+
+    const accept = document.createElement('button');
+    accept.type = 'button';
+    accept.className = 'cookie-btn cookie-accept';
+    accept.setAttribute('data-i18n', 'cookie_accept');
+    accept.textContent = trKey('cookie_accept');
+
+    const decline = document.createElement('button');
+    decline.type = 'button';
+    decline.className = 'cookie-btn cookie-decline';
+    decline.setAttribute('data-i18n', 'cookie_decline');
+    decline.textContent = trKey('cookie_decline');
+
+    accept.addEventListener('click', () => {
+        try { localStorage.setItem('mehano_consent', 'accepted'); } catch (e) { /* noop */ }
+        wrap.remove();
+    });
+    decline.addEventListener('click', () => {
+        try { localStorage.setItem('mehano_consent', 'declined'); } catch (e) { /* noop */ }
+        wrap.remove();
+    });
+
+    actions.appendChild(accept);
+    actions.appendChild(decline);
+    wrap.appendChild(text);
+    wrap.appendChild(actions);
+    document.body.appendChild(wrap);
+    applyLang(currentLang);
+}
+
+/* Sticky mobile bottom CTA bar (content pages only) */
+function initMobileCtaBar() {
+    const skip = ['privacy.html', 'terms.html', '404.html', 'check-assets.html'];
+    const page = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
+    if (skip.indexOf(page) !== -1) return;
+    if (document.getElementById('mobileCtaBar')) return;
+
+    const items = [
+        { href: 'index.html', key: 'nav_home', path: '<path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>' },
+        { href: 'about.html', key: 'nav_about', path: '<circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/>' },
+        { href: 'project.html', key: 'nav_project', path: '<path d="M12 2v8"/><path d="m4.93 10.93 1.41 1.41"/><path d="M2 18h2"/><path d="M20 18h2"/><path d="m19.07 10.93-1.41 1.41"/><path d="M22 22H2"/><path d="m8 22 4-10 4 10"/>' }
+    ];
+
+    const svgOpen = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">';
+    const bar = document.createElement('nav');
+    bar.className = 'mobile-cta-bar';
+    bar.id = 'mobileCtaBar';
+    bar.setAttribute('aria-label', 'Quick navigation');
+
+    items.forEach(item => {
+        const a = document.createElement('a');
+        a.href = item.href;
+        if (page === item.href || (page === '' && item.href === 'index.html')) a.classList.add('active');
+        a.innerHTML = svgOpen + item.path + '</svg>';
+        const span = document.createElement('span');
+        span.setAttribute('data-i18n', item.key);
+        span.textContent = trKey(item.key);
+        a.appendChild(span);
+        bar.appendChild(a);
+    });
+
+    const cta = document.createElement('a');
+    cta.href = 'contact.html';
+    cta.className = 'cta-pill';
+    cta.innerHTML = svgOpen + '<path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>';
+    const ctaSpan = document.createElement('span');
+    ctaSpan.setAttribute('data-i18n', 'nav_contact');
+    ctaSpan.textContent = trKey('nav_contact');
+    cta.appendChild(ctaSpan);
+    bar.appendChild(cta);
+
+    document.body.appendChild(bar);
+    applyLang(currentLang);
+}
+
+/* Legal links row inside the footer */
+function initFooterLegal() {
+    const content = document.querySelector('#footer .footer-content');
+    if (!content || document.querySelector('#footer .footer-legal')) return;
+    const row = document.createElement('div');
+    row.className = 'footer-legal';
+    const priv = document.createElement('a');
+    priv.href = 'privacy.html';
+    priv.setAttribute('data-i18n', 'privacy_link');
+    priv.textContent = trKey('privacy_link');
+    const terms = document.createElement('a');
+    terms.href = 'terms.html';
+    terms.setAttribute('data-i18n', 'terms_link');
+    terms.textContent = trKey('terms_link');
+    row.appendChild(priv);
+    row.appendChild(terms);
+    content.parentNode.appendChild(row);
+    applyLang(currentLang);
+}
+
+/* Validated contact form: inline errors, pending state, mailto compose + success panel */
+function initContactForm() {
+    const form = document.getElementById('contactForm');
+    if (!form) return;
+
+    const nameIn = document.getElementById('cf-name');
+    const emailIn = document.getElementById('cf-email');
+    const msgIn = document.getElementById('cf-msg');
+    const consentIn = document.getElementById('cf-consent');
+    const errName = document.getElementById('err-name');
+    const errEmail = document.getElementById('err-email');
+    const errMsg = document.getElementById('err-msg');
+    const errConsent = document.getElementById('err-consent');
+    const sendBtn = document.getElementById('cfSend');
+    const success = document.getElementById('formSuccess');
+    if (!nameIn || !emailIn || !msgIn || !consentIn || !errName || !errEmail || !errMsg || !errConsent || !sendBtn || !success) return;
+
+    const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    function clearErrors() {
+        [nameIn, emailIn, msgIn].forEach(i => i.removeAttribute('aria-invalid'));
+        consentIn.removeAttribute('aria-invalid');
+        [errName, errEmail, errMsg, errConsent].forEach(e => { e.hidden = true; });
+    }
+
+    form.addEventListener('submit', function (ev) {
+        ev.preventDefault();
+        clearErrors();
+
+        const name = nameIn.value.trim();
+        const email = emailIn.value.trim();
+        const msg = msgIn.value.trim();
+        let firstBad = null;
+
+        const fail = (input, err) => {
+            input.setAttribute('aria-invalid', 'true');
+            err.hidden = false;
+            if (!firstBad) firstBad = input;
+        };
+
+        if (name.length < 2) fail(nameIn, errName);
+        if (!EMAIL_RE.test(email)) fail(emailIn, errEmail);
+        if (msg.length < 10) fail(msgIn, errMsg);
+        if (!consentIn.checked) {
+            consentIn.setAttribute('aria-invalid', 'true');
+            errConsent.hidden = false;
+            if (!firstBad) firstBad = consentIn;
+        }
+        if (firstBad) {
+            firstBad.focus();
+            return;
+        }
+
+        /* pending state */
+        sendBtn.disabled = true;
+        sendBtn.setAttribute('aria-busy', 'true');
+        const label = sendBtn.querySelector('span');
+        if (label) label.textContent = trKey('form_sending');
+        const spinner = document.createElement('span');
+        spinner.className = 'spinner';
+        spinner.setAttribute('aria-hidden', 'true');
+        sendBtn.insertBefore(spinner, sendBtn.firstChild);
+
+        setTimeout(function () {
+            const subject = 'Team Mehano — message from ' + name;
+            const body = msg + '\n\n— ' + name + '\n' + email;
+            try {
+                window.location.href = 'mailto:teamehano@gmail.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+            } catch (e) { /* noop */ }
+            form.hidden = true;
+            success.hidden = false;
+            try { success.scrollIntoView({ behavior: 'smooth', block: 'center' }); } catch (e) { /* noop */ }
+        }, 900);
+    });
+
+    const again = document.getElementById('formAgain');
+    if (again) {
+        again.addEventListener('click', function () {
+            form.reset();
+            clearErrors();
+            form.hidden = false;
+            success.hidden = true;
+            sendBtn.disabled = false;
+            sendBtn.removeAttribute('aria-busy');
+            const label = sendBtn.querySelector('span');
+            if (label) label.textContent = trKey('form_send');
+            const sp = sendBtn.querySelector('.spinner');
+            if (sp) sp.remove();
+            nameIn.focus();
+        });
+    }
+}
+
+/* Decorative electronics layer: CRT scanline/grid overlay + terminal footer line */
+function initTechDecor() {
+    if (!document.getElementById('techOverlay')) {
+        const ov = document.createElement('div');
+        ov.id = 'techOverlay';
+        ov.className = 'tech-overlay';
+        ov.setAttribute('aria-hidden', 'true');
+        document.body.appendChild(ov);
+    }
+    const footerContent = document.querySelector('#footer .footer-content');
+    if (footerContent && !document.querySelector('#footer .footer-techline')) {
+        const tl = document.createElement('div');
+        tl.className = 'footer-techline';
+        tl.setAttribute('aria-hidden', 'true');
+        tl.innerHTML = '<span>MHK//OS v2.0</span><span class="dot">●</span><span>9 cores online</span><span class="dot">●</span><span>Burgas · BG</span><span class="dot">●</span><span>FLL 2025-26</span>';
+        footerContent.parentNode.appendChild(tl);
+    }
+}
+
+docReady(() => {
+    initCookieBanner();
+    initMobileCtaBar();
+    initFooterLegal();
+    initContactForm();
+    initTechDecor();
+});

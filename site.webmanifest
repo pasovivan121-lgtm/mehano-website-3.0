@@ -1,0 +1,27 @@
+{
+  "name": "Team Mehano — FIRST LEGO League Robotics",
+  "short_name": "Mehano",
+  "description": "FIRST LEGO League robotics team from Burgas, Bulgaria — robots, innovation and our project ASOA 2.0.",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#0a0c11",
+  "theme_color": "#0a0c11",
+  "icons": [
+    {
+      "src": "/assets/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
