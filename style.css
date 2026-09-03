@@ -4289,3 +4289,10 @@ span.link-chip {
         opacity: 0.85;
     }
 }
+/* Скрива десктоп менюто на екрани под 768px */
+@media (max-width: 768px) {
+  .nav-links, 
+  .desktop-menu { 
+    display: none !important;
+  }
+}
