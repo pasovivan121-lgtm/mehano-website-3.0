@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="bg">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Механо - Documentation</title>
+    <link rel="icon" type="image/jpeg" href="assets/teammehano_logo.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <!-- model-viewer for 3D GLB rendering -->
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.5.0/model-viewer.min.js"></script>
+    <style>
+        .doc-container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background: var(--surface);
+            border-radius: 24px;
+            border: 1px solid var(--border);
+            margin-top: 40px;
+            margin-bottom: 80px;
+        }
+
+        .doc-header {
+            margin-bottom: 40px;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 20px;
+        }
+
+        .doc-content {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-secondary);
+        }
+
+        .doc-content h2 {
+            color: var(--text-primary);
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+
+        .doc-content p {
+            margin-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+            margin-bottom: 20px;
+            transition: transform 0.2s;
+        }
+
+        .back-link:hover {
+            transform: translateX(-4px);
+        }
+
+        /* 3D Model Viewer */
+        .model-section {
+            margin: 40px 0;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            background: linear-gradient(135deg, rgba(0,0,0,0.02) 0%, rgba(0,0,0,0.04) 100%);
+            position: relative;
+        }
+
+        .model-section-header {
+            padding: 16px 24px;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .model-section-header .model-badge {
+            background: #000;
+            color: white;
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            padding: 3px 10px;
+            border-radius: 999px;
+            text-transform: uppercase;
+        }
+
+        .model-section-header .model-title {
+            color: var(--text-primary);
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        .model-section-header .model-hint {
+            margin-left: auto;
+            color: var(--text-secondary);
+            font-size: 0.82rem;
+            opacity: 0.7;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        model-viewer {
+            width: 100%;
+            height: 520px;
+            background: transparent;
+            --poster-color: transparent;
+        }
+
+        model-viewer::part(default-progress-bar) {
+            background: linear-gradient(90deg, #6366f1, #8b5cf6);
+            height: 3px;
+        }
+
+        model-viewer::part(default-ar-button) {
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            border: none;
+            border-radius: 12px;
+            color: white;
+            padding: 10px 18px;
+            font-weight: 600;
+            bottom: 16px;
+            right: 16px;
+        }
+
+        .model-controls-hint {
+            padding: 10px 24px 14px;
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .model-controls-hint span {
+            font-size: 0.78rem;
+            color: var(--text-secondary);
+            opacity: 0.6;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        @media (max-width: 600px) {
+            model-viewer {
+                height: 320px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav id="navbar">
+        <div class="nav-pill">
+            <div class="nav-profile">
+                <img src="assets/teammehano_logo.jpg" alt="Механо Logo">
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg> <span data-i18n="nav_home">Home</span></a></li>
+                <li><a href="about.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg> <span data-i18n="nav_about">About</span></a></li>
+                <li><a href="code.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg> <span data-i18n="nav_code">Code</span></a></li>
+                <li class="active"><a href="project.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v8"/><path d="m4.93 10.93 1.41 1.41"/><path d="M2 18h2"/><path d="M20 18h2"/><path d="m19.07 10.93-1.41 1.41"/><path d="M22 22H2"/><path d="m8 22 4-10 4 10"/></svg> <span data-i18n="nav_project">Project</span></a></li>
+                <li><a href="docs.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14.5 2 14.5 7 20 7"/></svg> <span data-i18n="nav_docs">Docs</span></a></li>
+                <li><a href="team.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg> <span data-i18n="nav_team">Team</span></a></li>
+                <li><a href="contact.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> <span data-i18n="nav_contact">Contact</span></a></li>
+            </ul>
+        </div>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg> <span data-i18n="nav_home">Home</span></a>
+        <a href="about.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg> <span data-i18n="nav_about">About</span></a>
+        <a href="code.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg> <span data-i18n="nav_code">Code</span></a>
+        <a href="project.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v8"/><path d="m4.93 10.93 1.41 1.41"/><path d="M2 18h2"/><path d="M20 18h2"/><path d="m19.07 10.93-1.41 1.41"/><path d="M22 22H2"/><path d="m8 22 4-10 4 10"/></svg> <span data-i18n="nav_project">Project</span></a>
+        <a href="docs.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14.5 2 14.5 7 20 7"/></svg> <span data-i18n="nav_docs">Docs</span></a>
+        <a href="team.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg> <span data-i18n="nav_team">Team</span></a>
+        <a href="contact.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> <span data-i18n="nav_contact">Contact</span></a>
+    </div>
+
+    <main style="padding-top: 100px;">
+        <div class="container">
+            <div class="doc-container reveal">
+                <div class="doc-header">
+                    <a href="project.html" class="back-link" data-i18n="back_to_project">&larr; Back to Project</a>
+                    <h1 class="section-title" style="text-align: left; margin: 0;" data-i18n="project_details_title">Research Project</h1>
+                </div>
+
+                <div class="doc-content">
+                    <p data-i18n="project_doc_p1">Loading...</p>
+                    <p data-i18n="project_doc_p2">Loading...</p>
+                    <p data-i18n="project_doc_p3">Loading...</p>
+                    <p data-i18n="project_doc_p4">Loading...</p>
+                    <p data-i18n="project_doc_p5">Loading...</p>
+
+                    <h2 data-i18n="project_doc_h1">Problems it solves</h2>
+                    <p data-i18n="project_doc_p6">Loading...</p>
+                    <p data-i18n="project_doc_p7">Loading...</p>
+                    <p data-i18n="project_doc_p8">Loading...</p>
+
+                    <h2 data-i18n="project_doc_h2">The Innovation Path</h2>
+                    <p data-i18n="project_doc_p9">Loading...</p>
+
+
+
+                    <h2 data-i18n="project_doc_h3">Hardware Section</h2>
+                    <p data-i18n="project_doc_p10">Loading...</p>
+
+                    <h2 data-i18n="project_doc_h4">Software Section</h2>
+                    <p data-i18n="project_doc_p11">Loading...</p>
+                    <p data-i18n="project_doc_p12">Loading...</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer id="footer">
+        <div class="container">
+            <div class="footer-content reveal">
+                <div class="footer-logo" data-i18n-html="site_logo">МЕХА<span>НО</span></div>
+                <div class="footer-links">
+                    <a href="https://www.facebook.com/share/14fhyT4UMTZ/" target="_blank" aria-label="Facebook"><img src="assets/facebook_icon.png" alt="Facebook" class="footer-social-icon"></a>
+                    <a href="https://www.instagram.com/team.mehano?igsh=MXFobXhndnludW91OA==" target="_blank" aria-label="Instagram"><img src="assets/Instagram_icon.png" alt="Instagram" class="footer-social-icon"></a>
+                    <a href="https://www.tiktok.com/@teammehanoburgas?_r=1&_t=ZN-95yMlugDDGB" target="_blank" aria-label="TikTok"><img src="assets/tiktok_icon.png" alt="TikTok" class="footer-social-icon"></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- FLOATING LANGUAGE SWITCHER -->
+    <div class="lang-fab" id="langFab">
+        <div class="lang-fab-panel" id="langFabPanel">
+            <div class="lang-fab-item active" data-lang="bg"><img src="assets/bulgarian_flag.png" alt="BG"></div>
+            <div class="lang-fab-item" data-lang="en"><img src="assets/usa_flag.png" alt="EN"></div>
+            <div class="lang-fab-item" data-lang="el"><img src="assets/greece_flag.png" alt="EL"></div>
+            <div class="lang-fab-item" data-lang="zh"><img src="assets/china_flag.png" alt="ZH"></div>
+            <div class="lang-fab-item" data-lang="pt"><img src="assets/portugal_flag.png" alt="PT"></div>
+            <div class="lang-fab-item" data-lang="es"><img src="assets/spain_flag.png" alt="ES"></div>
+            <div class="lang-fab-item" data-lang="ja"><img src="assets/japan_flag.png" alt="JA"></div>
+            <div class="lang-fab-item" data-lang="de"><img src="assets/german_flag.png" alt="DE"></div>
+            <div class="lang-fab-item" data-lang="fr"><img src="assets/french_flag.png" alt="FR"></div>
+        </div>
+        <button class="lang-fab-btn" id="langFabBtn" aria-label="Switch Language">
+            <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+            </svg>
+        </button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

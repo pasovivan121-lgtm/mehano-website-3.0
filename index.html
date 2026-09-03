@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Механо</title>
+    <link rel="icon" type="image/jpeg" href="assets/teammehano_logo.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://unpkg.com/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+    <script src="https://unpkg.com/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+
+        <!-- NAVBAR -->
+        <nav id="navbar">
+            <div class="nav-pill">
+                <div class="nav-profile">
+                    <img src="assets/teammehano_logo.jpg" alt="Механо Logo">
+                </div>
+                <ul class="nav-links">
+                    <li class="active"><a href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                                <polyline points="9 22 9 12 15 12 15 22" />
+                            </svg> <span data-i18n="nav_home">Начало</span></a></li>
+                    <li><a href="about.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10" />
+                                <path d="M12 16v-4" />
+                                <path d="M12 8h.01" />
+                            </svg> <span data-i18n="nav_about">За нас</span></a></li>
+                    <li><a href="code.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="16 18 22 12 16 6" />
+                                <polyline points="8 6 2 12 8 18" />
+                            </svg> <span data-i18n="nav_code">Код</span></a></li>
+                    <li><a href="project.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 2v8" />
+                                <path d="m4.93 10.93 1.41 1.41" />
+                                <path d="M2 18h2" />
+                                <path d="M20 18h2" />
+                                <path d="m19.07 10.93-1.41 1.41" />
+                                <path d="M22 22H2" />
+                                <path d="m8 22 4-10 4 10" />
+                            </svg> <span data-i18n="nav_project">Проект</span></a></li>
+                    <li><a href="docs.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z" />
+                                <polyline points="14.5 2 14.5 7 20 7" />
+                            </svg> <span data-i18n="nav_docs">Документи</span></a></li>
+                    <li><a href="team.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+                                <circle cx="9" cy="7" r="4" />
+                                <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                            </svg> <span data-i18n="nav_team">Отбор</span></a></li>
+                    <li><a href="contact.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path
+                                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                            </svg> <span data-i18n="nav_contact">Контакт</span></a></li>
+                </ul>
+            </div>
+            <button class="hamburger" id="hamburger" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+        </nav>
+
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                    <polyline points="9 22 9 12 15 12 15 22" />
+                </svg> <span data-i18n="nav_home">Начало</span></a>
+            <a href="about.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10" />
+                    <path d="M12 16v-4" />
+                    <path d="M12 8h.01" />
+                </svg> <span data-i18n="nav_about">За нас</span></a>
+            <a href="code.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="16 18 22 12 16 6" />
+                    <polyline points="8 6 2 12 8 18" />
+                </svg> <span data-i18n="nav_code">Код</span></a>
+            <a href="project.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 2v8" />
+                    <path d="m4.93 10.93 1.41 1.41" />
+                    <path d="M2 18h2" />
+                    <path d="M20 18h2" />
+                    <path d="m19.07 10.93-1.41 1.41" />
+                    <path d="M22 22H2" />
+                    <path d="m8 22 4-10 4 10" />
+                </svg> <span data-i18n="nav_project">Проект</span></a>
+            <a href="docs.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z" />
+                    <polyline points="14.5 2 14.5 7 20 7" />
+                </svg> <span data-i18n="nav_docs">Документи</span></a>
+            <a href="team.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+                    <circle cx="9" cy="7" r="4" />
+                    <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                </svg> <span data-i18n="nav_team">Отбор</span></a>
+            <a href="contact.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path
+                        d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                </svg> <span data-i18n="nav_contact">Контакт</span></a>
+        </div>
+
+        <!-- HERO -->
+        <section id="hero" class="moments-hero view-tilted" aria-label="Механо">
+            <!-- Vertical scrolling photo columns (built by inline script) -->
+            <div class="moments-bg" id="momentsBg" aria-hidden="true"></div>
+            <div class="moments-shade" aria-hidden="true"></div>
+
+            <!-- Top marquee ticker -->
+            <div class="moments-ticker moments-ticker--top" aria-hidden="true">
+                <div class="moments-ticker-track" id="momentsTopTicker"></div>
+            </div>
+
+            <div class="moments-content">
+                <div class="moments-eyebrow"><span data-i18n="hero_badge">✨ FLL Отбор 2025-26</span></div>
+                <h1 class="hero-title" data-i18n-html="site_logo">МЕХА<span>НО</span></h1>
+                <p class="hero-sub" data-i18n="hero_sub">Млад FIRST LEGO League отбор от инженери, мислители и
+                    мечтатели.
+                    Изграждаме роботи, решаваме проблеми и оставяме следа.</p>
+                <div class="hero-cta">
+                    <a href="project.html" class="btn-primary"><span data-i18n="nav_project">Проект</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                    </a>
+                    <a href="code.html" class="moments-btn-ghost"><span data-i18n="nav_code">Код</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                    </a>
+                </div>
+                <div class="hero-stats">
+                    <div>
+                        <div class="hero-stat-num">9</div>
+                        <div class="hero-stat-label" data-i18n="stat_members">Члена</div>
+                    </div>
+                    <div>
+                        <div class="hero-stat-num">2</div>
+                        <div class="hero-stat-label" data-i18n="stat_seasons">Сезона</div>
+                    </div>
+                    <div>
+                        <div class="hero-stat-num">100<span>%</span></div>
+                        <div class="hero-stat-label" data-i18n="stat_dedication">Отдаденост</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom marquee ticker -->
+            <div class="moments-ticker moments-ticker--bottom" aria-hidden="true">
+                <div class="moments-ticker-track" id="momentsBottomTicker"></div>
+            </div>
+
+            <!-- Demo mode controls -->
+            <div class="moments-demo" role="group" aria-label="View mode and scroll direction controls">
+                <button type="button" class="active" data-view="tilted">Tilted</button>
+                <button type="button" data-view="wall">Wall</button>
+                <button type="button" data-view="tunnel">Tunnel</button>
+                <button type="button" data-view="flat">Flat</button>
+                <span class="mh-sep"></span>
+                <button type="button" class="icon-btn" id="momentsDirBtn" title="Flip scroll direction" aria-label="Flip scroll direction">⇅</button>
+                <button type="button" class="icon-btn" id="momentsPauseBtn" title="Pause / play" aria-label="Pause or play animation">⏸</button>
+            </div>
+        </section>
+        <main>
+
+            <!-- BRIEF ABOUT -->
+            <section id="brief-about" style="padding: 120px 0;">
+                <div class="container">
+                    <div class="reveal">
+                        <div class="section-label" data-i18n="about_label">За нас</div>
+                        <h2 class="section-title" data-i18n="about_title">Кои сме ние</h2>
+                        <p class="section-desc" data-i18n="about_desc">Отбор от девет уникални ума, обединени от
+                            страстта към инженерството и иновациите. Заедно градим бъдещето чрез роботика.</p>
+                        <a href="about.html" class="btn-primary" data-i18n="nav_about">За нас</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- BRIEF MODELS -->
+            <section id="brief-models"
+                style="padding: 120px 0; background: var(--surface); border-top: 1px solid var(--border);">
+                <div class="container">
+                    <div class="reveal">
+                        <div class="section-label" data-i18n="nav_models">3D Модели</div>
+                        <h2 class="section-title" data-i18n="models_title">3D Архив на Робота</h2>
+                        <p class="section-desc" data-i18n="brief_models_desc">Разгледайте нашите роботизирани
+                            конструкции в детайлен 3D формат. Вижте всяка част отблизо.</p>
+                        <a href="models.html" class="btn-primary" data-i18n="nav_models">3D Модели</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- BRIEF PROJECT -->
+            <section id="brief-project"
+                style="padding: 120px 0; background: var(--bg); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+                <div class="container">
+                    <div class="reveal">
+                        <div class="section-label" data-i18n="project_label">Проект</div>
+                        <h2 class="section-title" data-i18n="project_title">Иновативен проект</h2>
+                        <p class="section-desc" data-i18n="project_name" style="margin-bottom: 24px;">Автоматизирана
+                            система за обесоляване на артефакти</p>
+                        <p class="section-desc" style="font-size: 1rem; max-width: 600px; opacity: 0.7;"
+                            data-i18n="project_desc">Решение, което прави света около нас по-добро място чрез модерна
+                            технология и IoT мониторинг.</p>
+                        <a href="project.html" class="btn-primary" data-i18n="nav_project">Проект</a>
+                    </div>
+                </div>
+            </section>
+
+
+        </main>
+
+
+        <!-- FOOTER -->
+        <footer id="footer">
+            <div class="container">
+                <div class="footer-content reveal">
+                    <div class="footer-logo" data-i18n-html="site_logo">МЕХА<span>НО</span></div>
+
+                    <div class="footer-links">
+                        <a href="https://www.facebook.com/share/14fhyT4UMTZ/" target="_blank" aria-label="Facebook"><img
+                                src="assets/facebook_icon.png" alt="Facebook" class="footer-social-icon"></a>
+                        <a href="https://www.instagram.com/team.mehano?igsh=MXFobXhndnludW91OA==" target="_blank"
+                            aria-label="Instagram"><img src="assets/Instagram_icon.png" alt="Instagram"
+                                class="footer-social-icon"></a>
+                        <a href="https://www.tiktok.com/@teammehanoburgas?_r=1&_t=ZN-95yMlugDDGB" target="_blank" aria-label="TikTok"><img src="assets/tiktok_icon.png" alt="TikTok" class="footer-social-icon"></a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+
+
+        <!-- FLOATING LANGUAGE SWITCHER -->
+        <div class="lang-fab" id="langFab">
+            <div class="lang-fab-panel" id="langFabPanel">
+                <div class="lang-fab-item active" data-lang="bg"><img src="assets/bulgarian_flag.png" alt="BG"></div>
+                <div class="lang-fab-item" data-lang="en"><img src="assets/usa_flag.png" alt="EN"></div>
+                <div class="lang-fab-item" data-lang="el"><img src="assets/greece_flag.png" alt="EL"></div>
+                <div class="lang-fab-item" data-lang="zh"><img src="assets/china_flag.png" alt="ZH"></div>
+                <div class="lang-fab-item" data-lang="pt"><img src="assets/portugal_flag.png" alt="PT"></div>
+                <div class="lang-fab-item" data-lang="es"><img src="assets/spain_flag.png" alt="ES"></div>
+                <div class="lang-fab-item" data-lang="ja"><img src="assets/japan_flag.png" alt="JA"></div>
+                <div class="lang-fab-item" data-lang="de"><img src="assets/german_flag.png" alt="DE"></div>
+                <div class="lang-fab-item" data-lang="fr"><img src="assets/french_flag.png" alt="FR"></div>
+            </div>
+            <button class="lang-fab-btn" id="langFabBtn" aria-label="Switch Language">
+                <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" />
+                </svg>
+            </button>
+        </div>
+        <script src="script.js"></script>
+        <script>
+            // ─── Photo Scroll Gallery: build looping photo columns + marquee tickers ───
+            (function () {
+                var hero = document.getElementById('hero');
+                var bg = document.getElementById('momentsBg');
+                if (!hero || !bg) return;
+
+                var IMAGES = [
+                    { src: 'assets/mehanoteam1.jpg', alt: 'Механо — отборен момент 1' },
+                    { src: 'assets/mehanoteam2.jpg', alt: 'Механо — отборен момент 2' },
+                    { src: 'assets/mehanoteam3.jpg', alt: 'Механо — отборен момент 3' },
+                    { src: 'assets/mehanoteam4.jpg', alt: 'Механо — отборен момент 4' },
+                    { src: 'assets/team5.jpg', alt: 'Механо — отборен момент 5' },
+                    { src: 'assets/proekt.jpg', alt: 'Механо — иновативен проект' },
+                    { src: 'assets/mehano_team.jpg', alt: 'Механо — отборна снимка' }
+                ];
+
+                // Column configs: image indices, loop duration, stagger offset, flow direction
+                var COLS = [
+                    { pick: [0, 1, 2, 3, 4], dur: 46, lag: '0%', flow: 'a' },
+                    { pick: [1, 2, 3, 4, 5], dur: 58, lag: '-14%', flow: 'b' },
+                    { pick: [2, 3, 4, 5, 6], dur: 40, lag: '-5%', flow: 'a' },
+                    { pick: [4, 5, 6, 0, 1], dur: 66, lag: '-22%', flow: 'b' }
+                ];
+
+                function makeCard(img, index) {
+                    var card = document.createElement('div');
+                    card.className = 'mh-card mh-card--' + (index % 2 === 0 ? 'tall' : 'sq');
+                    var im = document.createElement('img');
+                    im.src = img.src;
+                    im.alt = img.alt;
+                    im.loading = 'eager';
+                    card.appendChild(im);
+                    return card;
+                }
+
+                var columns = [];
+                COLS.forEach(function (cfg) {
+                    var col = document.createElement('div');
+                    col.className = 'mc-column flow-' + cfg.flow;
+                    col.style.setProperty('--dur', cfg.dur + 's');
+                    col.style.setProperty('--lag', cfg.lag);
+
+                    var track = document.createElement('div');
+                    track.className = 'mc-track';
+                    var half = document.createElement('div');
+                    half.style.cssText = 'display:contents';
+
+                    cfg.pick.forEach(function (imgIdx, i) {
+                        half.appendChild(makeCard(IMAGES[imgIdx], i));
+                    });
+
+                    track.appendChild(half);
+                    track.appendChild(half.cloneNode(true));
+                    col.appendChild(track);
+                    bg.appendChild(col);
+                    columns.push(col);
+                });
+
+                // Duplicate a set of nodes for a seamless -50% horizontal loop
+                function fillTicker(trackId, buildItems) {
+                    var track = document.getElementById(trackId);
+                    if (!track) return;
+                    var first = buildItems();
+                    track.appendChild(first);
+                    track.appendChild(first.cloneNode(true));
+                }
+
+                var TOP_ITEMS = ['Механо · Mehano', 'Бургас · Burgas', 'FLL 2025–26', 'Роботика · Robotics', 'Екип · Team', 'Иновация · Innovation', 'ASOA 2.0'];
+                var BOTTOM_ITEMS = [
+                    { t: 'Our Moments', c: '' },
+                    { t: 'Нашите моменти', c: 'mh-word--alt' },
+                    { t: 'Robotics', c: '' },
+                    { t: 'Роботика', c: 'mh-word--dim' },
+                    { t: 'Teamwork', c: '' },
+                    { t: 'Екипна работа', c: 'mh-word--alt' },
+                    { t: 'Innovation', c: '' },
+                    { t: 'Иновация', c: 'mh-word--dim' },
+                    { t: 'Fun', c: '' },
+                    { t: 'Забава', c: 'mh-word--alt' }
+                ];
+
+                function makeTopTicker() {
+                    var frag = document.createDocumentFragment();
+                    TOP_ITEMS.forEach(function (t) {
+                        var pill = document.createElement('span');
+                        pill.className = 'mh-pill';
+                        pill.textContent = t;
+                        frag.appendChild(pill);
+                    });
+                    return frag;
+                }
+
+                function makeBottomTicker() {
+                    var frag = document.createDocumentFragment();
+                    BOTTOM_ITEMS.forEach(function (item, i) {
+                        var w = document.createElement('span');
+                        w.className = 'mh-word ' + (item.c || (i % 2 ? 'mh-word--dim' : ''));
+                        w.textContent = item.t;
+                        frag.appendChild(w);
+                    });
+                    return frag;
+                }
+
+                fillTicker('momentsTopTicker', makeTopTicker);
+                fillTicker('momentsBottomTicker', makeBottomTicker);
+
+                var topTrack = document.getElementById('momentsTopTicker');
+                var bottomTrack = document.getElementById('momentsBottomTicker');
+                if (topTrack) topTrack.style.setProperty('--tdur', '34s');
+                if (bottomTrack) {
+                    bottomTrack.style.setProperty('--tdur', '46s');
+                    bottomTrack.style.animationDirection = 'reverse';
+                }
+
+                // ─── Demo mode controls ───
+                var viewBtns = hero.querySelectorAll('[data-view]');
+
+                function setView(v) {
+                    hero.classList.remove('view-tilted', 'view-wall', 'view-tunnel', 'view-flat');
+                    hero.classList.add('view-' + v);
+                    viewBtns.forEach(function (b) { b.classList.toggle('active', b.dataset.view === v); });
+                }
+
+                viewBtns.forEach(function (b) {
+                    b.addEventListener('click', function () { setView(b.dataset.view); });
+                });
+
+                // Flip every column's flow direction without a visual jump: reverse the
+                // velocity but keep the current phase by offsetting the animation start.
+                var dirBtn = document.getElementById('momentsDirBtn');
+                if (dirBtn) {
+                    dirBtn.addEventListener('click', function () {
+                        columns.forEach(function (col) {
+                            var track = col.querySelector('.mc-track');
+                            var anims = track ? track.getAnimations() : [];
+                            var dur = parseFloat(getComputedStyle(track).animationDuration) * 1000 || 46000;
+                            var progress = (anims.length && anims[0].currentTime !== null) ? anims[0].currentTime : 0;
+                            var p = Math.min(0.999, Math.max(0, progress / dur));
+
+                            var next = col.classList.contains('flow-a') ? 'b' : 'a';
+                            col.classList.remove('flow-a', 'flow-b');
+                            if (track) track.style.animationDelay = -Math.round((1 - p) * dur) + 'ms';
+                            col.classList.add('flow-' + next);
+                        });
+                    });
+                }
+
+                var pauseBtn = document.getElementById('momentsPauseBtn');
+                if (pauseBtn) {
+                    pauseBtn.addEventListener('click', function () {
+                        var paused = hero.classList.toggle('is-paused');
+                        pauseBtn.textContent = paused ? '▶' : '⏸';
+                        pauseBtn.setAttribute('aria-pressed', String(paused));
+                    });
+                }
+            })();
+        </script>
+    </body>
+
+</html>

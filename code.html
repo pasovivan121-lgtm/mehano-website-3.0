@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Механо</title>
+    <link rel="icon" type="image/jpeg" href="assets/teammehano_logo.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav id="navbar">
+        <div class="nav-pill">
+            <div class="nav-profile">
+                <img src="assets/teammehano_logo.jpg" alt="Механо Logo">
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg> <span data-i18n="nav_home">Начало</span></a></li>
+                <li><a href="about.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg> <span data-i18n="nav_about">За нас</span></a></li>
+                <li class="active"><a href="code.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg> <span data-i18n="nav_code">Код</span></a></li>
+                <li><a href="project.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v8"/><path d="m4.93 10.93 1.41 1.41"/><path d="M2 18h2"/><path d="M20 18h2"/><path d="m19.07 10.93-1.41 1.41"/><path d="M22 22H2"/><path d="m8 22 4-10 4 10"/></svg> <span data-i18n="nav_project">Проект</span></a></li>
+                <li><a href="docs.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14.5 2 14.5 7 20 7"/></svg> <span data-i18n="nav_docs">Документи</span></a></li>
+                <li><a href="team.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg> <span data-i18n="nav_team">Отбор</span></a></li>
+                <li><a href="contact.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> <span data-i18n="nav_contact">Контакт</span></a></li>
+            </ul>
+        </div>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg> <span data-i18n="nav_home">Начало</span></a>
+        <a href="about.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg> <span data-i18n="nav_about">За нас</span></a>
+        <a href="code.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg> <span data-i18n="nav_code">Код</span></a>
+        <a href="project.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v8"/><path d="m4.93 10.93 1.41 1.41"/><path d="M2 18h2"/><path d="M20 18h2"/><path d="m19.07 10.93-1.41 1.41"/><path d="M22 22H2"/><path d="m8 22 4-10 4 10"/></svg> <span data-i18n="nav_project">Проект</span></a>
+        <a href="docs.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14.5 2 14.5 7 20 7"/></svg> <span data-i18n="nav_docs">Документи</span></a>
+        <a href="team.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg> <span data-i18n="nav_team">Отбор</span></a>
+        <a href="contact.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> <span data-i18n="nav_contact">Контакт</span></a>
+    </div>
+
+    <main style="padding-top: 100px;">
+        <!-- CODE -->
+        <section id="code">
+            <div class="container">
+                <div class="reveal">
+                    <div class="section-label" data-i18n="code_label">Код</div>
+                    <h2 class="section-title" data-i18n="code_title">Нашият код на победата</h2>
+                    <p class="section-desc" data-i18n="code_desc">Чист Python за SPIKE Prime. Open-source, модулен,
+                        оптимизиран.</p>
+                </div>
+                <div class="code-wrapper reveal">
+                    <div class="code-header">
+                         <div class="code-dots"><span></span><span></span><span></span></div>
+                         <div class="code-filename" data-i18n="code_filename">mehano_bot.py</div>
+                         <div class="code-badge" data-i18n="code_badge">PYTHON 3</div>
+                     </div>
+                     <div class="code-body">
+                         <pre data-i18n-html="code_snippet"><span class="cm"># ⚙️ МЕХАНО v2.0 Секретен алгоритъм (не показвай на съдиите)</span>
+
+<span class="kw">import</span> <span class="var">spike</span><span class="op">,</span> <span class="var">food</span><span class="op">,</span> <span class="var">random</span><span class="op">,</span> <span class="var">dreams</span><span class="op">,</span> <span class="var">panic</span>
+<span class="kw">from</span> <span class="var">mehano</span> <span class="kw">import</span> <span class="var">надежда</span><span class="op">,</span> <span class="var">воля</span><span class="op">,</span> <span class="var">храна</span>
+
+<span class="cls">РОБОТ</span>         <span class="op">=</span> <span class="str">"Робо"</span>   <span class="cm"># най-умният робот в Бургас</span>
+<span class="cls">ХРАНА_ИЗЯДЕНА</span> <span class="op">=</span> <span class="num">47</span>            <span class="cm"># точно колкото commits</span>
+<span class="cls">ВЕРОЯТНОСТ_ПОБЕДА</span> <span class="op">=</span> <span class="num">0.999</span>    <span class="cm"># останалото е за всеки случай</span>
+<span class="cls">МЕНТОР_СПИ</span>    <span class="op">=</span> <span class="kw">True</span>          <span class="cm"># винаги True след 22:00</span>
+
+<span class="kw">def</span> <span class="fn">зареди_робота</span>():
+    <span class="kw">if</span> <span class="var">food</span>.<span class="fn">is_empty</span>():
+        <span class="kw">raise</span> <span class="cls">CriticalError</span>(<span class="str">"Екипът не може без храна 🍔"</span>)
+    <span class="fn">print</span>(<span class="str">"Робо-9000 се събужда..."</span>)
+    <span class="var">spike</span>.<span class="var">motor_a</span>.<span class="fn">run</span>(<span class="var">speed</span><span class="op">=</span><span class="num">100</span>)
+    <span class="kw">return</span> <span class="str">"🤖 Готов за битка"</span>
+
+<span class="kw">def</span> <span class="fn">изпълни_мисия</span>(<span class="var">мисия</span><span class="op">,</span> <span class="var">опити</span><span class="op">=</span><span class="num">3</span>):
+    <span class="kw">for</span> <span class="var">i</span> <span class="kw">in</span> <span class="fn">range</span>(<span class="var">опити</span>):
+        <span class="kw">try</span>:
+            <span class="var">робот</span>.<span class="fn">направи_нещо_умно</span>(<span class="var">мисия</span>)
+            <span class="fn">print</span>(<span class="str">f"Мисия {мисия} успех! 🎉"</span>)
+            <span class="kw">break</span>
+        <span class="kw">except</span> <span class="cls">LegoPадна</span>:
+            <span class="fn">print</span>(<span class="str">"Не видяха... надявам се 🙈"</span>)
+
+<span class="kw">def</span> <span class="fn">спечели_турнира</span>():
+    <span class="fn">зареди_робота</span>()
+    <span class="var">мисии</span> <span class="op">=</span> [<span class="num">9</span><span class="op">,</span> <span class="num">10</span><span class="op">,</span> <span class="num">13</span>]
+    <span class="kw">for</span> <span class="var">мисия</span> <span class="kw">in</span> <span class="var">мисии</span>:
+        <span class="fn">изпълни_мисия</span>(<span class="var">мисия</span>)
+    <span class="kw">if</span> <span class="var">random</span>.<span class="fn">random</span>() <span class="op">&lt;</span> <span class="cls">ВЕРОЯТНОСТ_ПОБЕДА</span>:
+        <span class="kw">return</span> <span class="str">"🏆 Трофей получен. Поръчваме храна."</span>
+    <span class="kw">else</span>:
+        <span class="kw">return</span> <span class="str">"😤"</span>
+
+<span class="fn">print</span>(<span class="fn">спечели_турнира</span>())</pre>
+                     </div>
+                     <div class="code-footer">
+                         <div class="code-meta">main · 47 commits · MIT</div>
+                         <a href="https://github.com/Djef-h/First-lego-league---mehano-/blob/main/fll.py" target="_blank"
+                             class="code-action" data-i18n="code_action">▶ Изпълни в GitHub →</a>
+                     </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer id="footer">
+        <div class="container">
+            <div class="footer-content reveal">
+                <div class="footer-logo" data-i18n-html="site_logo">МЕХА<span>НО</span></div>
+                
+                <div class="footer-links">
+                    <a href="https://www.facebook.com/share/14fhyT4UMTZ/" target="_blank" aria-label="Facebook"><img src="assets/facebook_icon.png" alt="Facebook" class="footer-social-icon"></a>
+                    <a href="https://www.instagram.com/team.mehano?igsh=MXFobXhndnludW91OA==" target="_blank" aria-label="Instagram"><img src="assets/Instagram_icon.png" alt="Instagram" class="footer-social-icon"></a>
+                    <a href="https://www.tiktok.com/@teammehanoburgas?_r=1&_t=ZN-95yMlugDDGB" target="_blank" aria-label="TikTok"><img src="assets/tiktok_icon.png" alt="TikTok" class="footer-social-icon"></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    
+
+    <!-- FLOATING LANGUAGE SWITCHER -->
+    <div class="lang-fab" id="langFab">
+        <div class="lang-fab-panel" id="langFabPanel">
+            <div class="lang-fab-item active" data-lang="bg"><img src="assets/bulgarian_flag.png" alt="BG"></div>
+            <div class="lang-fab-item" data-lang="en"><img src="assets/usa_flag.png" alt="EN"></div>
+            <div class="lang-fab-item" data-lang="el"><img src="assets/greece_flag.png" alt="EL"></div>
+            <div class="lang-fab-item" data-lang="zh"><img src="assets/china_flag.png" alt="ZH"></div>
+            <div class="lang-fab-item" data-lang="pt"><img src="assets/portugal_flag.png" alt="PT"></div>
+            <div class="lang-fab-item" data-lang="es"><img src="assets/spain_flag.png" alt="ES"></div>
+            <div class="lang-fab-item" data-lang="ja"><img src="assets/japan_flag.png" alt="JA"></div>
+            <div class="lang-fab-item" data-lang="de"><img src="assets/german_flag.png" alt="DE"></div>
+            <div class="lang-fab-item" data-lang="fr"><img src="assets/french_flag.png" alt="FR"></div>
+        </div>
+        <button class="lang-fab-btn" id="langFabBtn" aria-label="Switch Language">
+            <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+            </svg>
+        </button>
+    </div>
+<script src="script.js"></script>
+</body>
+
+</html>
