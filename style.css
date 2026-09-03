@@ -4361,6 +4361,11 @@ span.link-chip {
 
 /* ─── PHONE LAYER: keep floating UI above the sticky mobile CTA bar ─── */
 @media (max-width: 860px) {
+    /* the CRT scanline/circuit overlay is too noisy on small screens */
+    .tech-overlay {
+        display: none;
+    }
+
     .lang-fab {
         bottom: calc(86px + env(safe-area-inset-bottom));
         right: 18px;
